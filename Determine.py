@@ -44,9 +44,9 @@ def determine_combo(cards):
         if sorted(rank_count_sorted[:5]) == sorted(rank[0+i:5+i]) or sorted(rank_count_sorted[:5]) == sorted(Ato5):
             if flush_flag:
                 if i is 0:
-                    return 0#Royal Flush
+                    return 10#Royal Flush
                 else:
-                    return [1, rank_count]#Straight Flush
+                    return [9, rank_count]#Straight Flush
             else:
                 return [5, rank_count]#Straight
 
@@ -73,7 +73,7 @@ def determine_winner(player1_cards, player2_cards):
         return 1
     elif player1_combo[0] < player2_combo[0]:
         return 0
-    elif player1_combo[0] == 1:
+    elif player1_combo[0] == 1:#compare high cards
         rank = ["A", "K", "Q", "J", "T", "9", "8", "7", "6", "5", "4", "3", "2"]
         for r in rank:
             for l in range(len(player1_combo[1])):
@@ -82,6 +82,24 @@ def determine_winner(player1_cards, player2_cards):
                         return 1
                     elif r is player2_combo[1][l]:
                         return 0
+    elif player1_combo[0] == 2:#compare one pair
+        misc = 0
+    elif player1_combo[0] == 3:#compare two pair
+        misc = 0
+    elif player1_combo[0] == 4:#compare three of a kind
+        misc = 0
+    elif player1_combo[0] == 5:#compare straight
+        misc = 0
+    elif player1_combo[0] == 6:#compare flush
+        misc = 0
+    elif player1_combo[0] == 7:#compare full house
+        misc = 0
+    elif player1_combo[0] == 8:#compare quads
+        misc = 0
+    elif player1_combo[0] == 9:#compare straight flushs
+        misc = 0
+    else:#chop chop
+        misc = 0
     '''
     else:
         rank = ["A", "K", "Q", "J", "T", "9", "8", "7", "6", "5", "4", "3", "2"]
