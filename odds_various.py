@@ -67,6 +67,7 @@ def pocket_pair(deck):
     print("Total Starting hands:\t\t" + str(total))
     print("Percentage of pocket pair:\t" + percentage(count_pocket_pairs, total) + "%")
 
+print("Shared 3 card flush")
 shared_flush(generate_deck())
 print("############################")
 pocket_pair(generate_deck())

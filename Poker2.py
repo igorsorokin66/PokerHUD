@@ -102,7 +102,7 @@ for i in range(10000):
     for p in range(number_of_players):
         players.append(deck[:2])    #deal two cards
         deck = deck[2:]             #remove two cards
-    print players
+    print(players)
     family = deck[:5]
     players[0].extend(family)
     players[1].extend(family)
