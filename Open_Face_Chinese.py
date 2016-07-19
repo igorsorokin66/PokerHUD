@@ -68,3 +68,10 @@ for a, b, c, d, e in itertools.combinations(deck, 5):
         deck1 = deck
 
 print(count)
+#5 5 3
+#5 flush, 5 straight, 5 full house
+#4 flush?
+#2 pair- different strategies based on various pairs
+
+for z in itertools.combinations(deck, 13):
+    print(z)
